@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Kone Fanhatcha | Student ID: S1803435-->
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
@@ -144,4 +145,8 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="BelizeHole">#2980b9</color>
+    <color name="Concrete">#95a5a6</color>
+    <color name="actionbar_background">#fff</color>
+    <color name="actionbar_text">#000</color>
 </resources>

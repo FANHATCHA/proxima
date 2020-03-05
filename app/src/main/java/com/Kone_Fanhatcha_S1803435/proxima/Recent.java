@@ -1,20 +1,45 @@
 package com.Kone_Fanhatcha_S1803435.proxima;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
+import com.Kone_Fanhatcha_S1803435.proxima.Models.FeedItem;
+import com.Kone_Fanhatcha_S1803435.proxima.adapters.FeedsAdapter;
+import com.Kone_Fanhatcha_S1803435.proxima.data.RssFeedReader;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Roads extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Recent extends AppCompatActivity {
+
+
+    RecyclerView mRecyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_roads);
+        setContentView(R.layout.activity_recent);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.drawable.ic_location_on_black_24dp);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+
+        //Call Read rss asyntask to fetch rss
+        RssFeedReader readRss = new RssFeedReader(this, mRecyclerView);
+        readRss.execute();
+
 
 
         //Initialize and assign variables
@@ -38,7 +63,7 @@ public class Roads extends AppCompatActivity {
                                 MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.roads:
+                    case R.id.recent:
                         return true;
                 }
                 return false;

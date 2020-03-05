@@ -1,6 +1,7 @@
 package com.Kone_Fanhatcha_S1803435.proxima;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,6 +16,10 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.drawable.ic_location_on_black_24dp);
 
         //Initialize and assign variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -34,9 +39,9 @@ public class Search extends AppCompatActivity {
                                 MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.roads:
+                    case R.id.recent:
                         startActivity(new Intent(getApplicationContext(),
-                                Roads.class));
+                                Recent.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

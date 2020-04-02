@@ -1,9 +1,12 @@
 package com.Kone_Fanhatcha_S1803435.proxima.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Kone Fanhatcha - Student ID: S1803435.
  */
-public class FeedItem {
+public class FeedItem implements Parcelable {
 
     String title;
     String description;
@@ -70,6 +73,44 @@ public class FeedItem {
         this.geoLong = geoLong;
     }
 
+    public FeedItem(String title, String description, String link, String pubDate, String category, String geoLat, String geoLong) {
+        this.title = title;
+        this.description = description;
+        this.link = link;
+        this.pubDate = pubDate;
+        this.category = category;
+        this.geoLat = geoLat;
+        this.geoLong = geoLong;
+    }
 
 
+    public FeedItem() {
+
+    }
+
+    protected FeedItem(Parcel in) {
+        title = in.readString();
+        description = in.readString();
+        link = in.readString();
+        pubDate = in.readString();
+        category = in.readString();
+        geoLat = in.readString();
+        geoLong = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(title);
+        parcel.writeString(description);
+        parcel.writeString(link);
+        parcel.writeString(pubDate);
+        parcel.writeString(category);
+        parcel.writeString(geoLat);
+        parcel.writeString(geoLong);
+    }
 }

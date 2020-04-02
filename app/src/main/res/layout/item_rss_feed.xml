@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Kone Fanhatcha | Student ID: S1803435-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
 
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        android:textSize="17dp" />
     <TextView
-        android:id="@+id/descriptionText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:id="@+id/pubDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:layout_marginTop="7dp"
+        android:textColor="#343434"
+        android:textSize="14dp" />
     <TextView
-        android:id="@+id/linkText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/magnitudeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/pubDateText"
+        android:layout_alignBottom="@+id/pubDateText"
+        android:layout_alignParentRight="true"
+        android:textColor="#343434"
+        android:textSize="14dp" />
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="@color/Nephritis"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorAccent" />
-</LinearLayout>
+
+</RelativeLayout>

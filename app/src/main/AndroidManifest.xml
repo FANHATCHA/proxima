@@ -30,6 +30,7 @@
 
         <activity android:name=".Recent" />
         <activity android:name=".Search" />
+        <activity android:name=".FeedDetails" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

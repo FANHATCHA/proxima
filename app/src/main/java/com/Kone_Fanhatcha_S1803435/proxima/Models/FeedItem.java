@@ -17,6 +17,18 @@ public class FeedItem implements Parcelable {
     String geoLong;
 
 
+    public static final Creator<FeedItem> CREATOR = new Creator<FeedItem>() {
+        @Override
+        public FeedItem createFromParcel(Parcel in) {
+            return new FeedItem(in);
+        }
+
+        @Override
+        public FeedItem[] newArray(int size) {
+            return new FeedItem[size];
+        }
+    };
+
     public String getTitle() {
         return title;
     }

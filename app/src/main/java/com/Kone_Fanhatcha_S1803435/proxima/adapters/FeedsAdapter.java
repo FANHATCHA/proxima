@@ -67,32 +67,44 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedModelVie
         Utils utils = new Utils();
 
         final FeedItem rssFeedModel = mRssFeedModels.get(position);
-        ((TextView)holder.rssFeedView.findViewById(R.id.magnitudeText)).setText(utils.magnitude(rssFeedModel.getTitle()));
-        ((TextView)holder.rssFeedView.findViewById(R.id.titleText)).setText(utils.eventTitle(rssFeedModel.getTitle()));
-       ((TextView)holder.rssFeedView.findViewById(R.id.pubDateText)).setText(utils.eventDate(rssFeedModel.getPubDate()));
+//        ((TextView)holder.rssFeedView.findViewById(R.id.magnitudeText)).setText(utils.magnitude(rssFeedModel.getTitle()));
+//        ((TextView)holder.rssFeedView.findViewById(R.id.titleText)).setText(utils.eventTitle(rssFeedModel.getTitle()));
+//       ((TextView)holder.rssFeedView.findViewById(R.id.pubDateText)).setText(utils.eventDate(rssFeedModel.getPubDate()));
 //        ((TextView)holder.rssFeedView.findViewById(R.id.descriptionText)).setText(rssFeedModel.getDescription());
 //        ((TextView)holder.rssFeedView.findViewById(R.id.linkText)).setText(rssFeedModel.getLink());
         //((TextView)holder.rssFeedView.findViewById(R.id.pubDateText)).setText(rssFeedModel.getLink());
+
+        holder.magnitudeText.setText(utils.magnitude(rssFeedModel.getTitle()));
+        holder.titleText.setText(utils.eventTitle(rssFeedModel.getTitle()));
+        holder.pubDateText.setText(utils.eventDate(rssFeedModel.getPubDate()));
     }
 
 
     public static class FeedModelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private View rssFeedView;
 
-        TextView textTile;
-        OnRssFeedListener mOnRssFeedListener;
+        TextView magnitudeText;
+        TextView titleText;
+        TextView pubDateText;
 
+        //        TextView textTile;
+        OnRssFeedListener mOnRssFeedListener;
         public FeedModelViewHolder(View v) {
             super(v);
             rssFeedView = v;
+
         }
+
+
 
         public FeedModelViewHolder(View itemView, OnRssFeedListener onRssFeedListener) {
             super(itemView);
             //timestamp = itemView.findViewById(R.id.note_timestamp);
-            textTile = itemView.findViewById(R.id.titleText);
+//            textTile = itemView.findViewById(R.id.titleText);
+            titleText = itemView.findViewById(R.id.titleText);
+            magnitudeText = itemView.findViewById(R.id.magnitudeText);
+            pubDateText = itemView.findViewById(R.id.pubDateText);
             mOnRssFeedListener = onRssFeedListener;
-
             itemView.setOnClickListener(this);
         }
 

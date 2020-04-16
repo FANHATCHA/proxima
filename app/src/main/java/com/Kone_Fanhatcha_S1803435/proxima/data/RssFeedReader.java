@@ -30,7 +30,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class RssFeedReader extends AsyncTask<Void, Void, Void> {
 
     Context context;
-    String feedUrl = "http://quakes.bgs.ac.uk/feeds/WorldSeismology.xml";
+    String feedUrl = "https://quakes.bgs.ac.uk/feeds/WorldSeismology.xml";
     ProgressDialog progressDialog;
     ArrayList<FeedItem> feedItems;
     RecyclerView recyclerView;

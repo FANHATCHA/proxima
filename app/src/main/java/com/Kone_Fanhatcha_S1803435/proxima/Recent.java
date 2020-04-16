@@ -21,7 +21,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class Recent extends AppCompatActivity implements FeedsAdapter.OnRssFeedListener {
+//public class Recent extends AppCompatActivity implements FeedsAdapter.OnRssFeedListener {
+public class Recent extends AppCompatActivity {
 
     private static final String TAG = "Recent";
     //UI components
@@ -80,23 +81,22 @@ public class Recent extends AppCompatActivity implements FeedsAdapter.OnRssFeedL
     private void initRecyclerView(){
         RssFeedReader readRss = new RssFeedReader(this, mRecyclerView);
         readRss.execute();
-        
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
 
-        VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(10);
-        mRecyclerView.addItemDecoration(itemDecorator);
-
-        //new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
-        mFeedsAdapter = new FeedsAdapter(mFeedItems, this);
-        mRecyclerView.setAdapter(mFeedsAdapter);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        mRecyclerView.setLayoutManager(linearLayoutManager);
+//
+//        VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(10);
+//        mRecyclerView.addItemDecoration(itemDecorator);
+//        //new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
+//        mFeedsAdapter = new FeedsAdapter(mFeedItems, this);
+//        mRecyclerView.setAdapter(mFeedsAdapter);
     }
 
-
-    public void onRssFeedClicked(int position) {
-        Intent intent = new Intent(this, FeedDetails.class);
-        intent.putExtra("selected_rss_feed", mFeedItems.get(position));
-        startActivity(intent);
-    }
+//    @Override
+//    public void onRssFeedClicked(int position) {
+//        Intent intent = new Intent(this, FeedDetails.class);
+//        intent.putExtra("selected_rss_feed", mFeedItems.get(position));
+//        startActivity(intent);
+//    }
 
 }

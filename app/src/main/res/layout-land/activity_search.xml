@@ -22,8 +22,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Search by date"
-            android:layout_marginBottom="15sp"
-            android:layout_marginTop="2sp"
+            android:layout_marginBottom="1sp"
+            android:layout_marginTop="1sp"
             android:layout_marginLeft="20sp"
             android:textSize="15sp"
             />
@@ -31,9 +31,10 @@
         <DatePicker
             android:id="@+id/periodPicker"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2sp"
-            android:datePickerMode="calendar"
+            android:layout_height="150dp"
+            android:layout_marginBottom="5sp"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
             />
 
         <Button
@@ -50,6 +51,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:itemBackground="@color/white"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"

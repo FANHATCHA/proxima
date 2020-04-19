@@ -35,12 +35,32 @@ public class RssFeedReader extends AsyncTask<Void, Void, Void> {
     ArrayList<FeedItem> feedItems;
     RecyclerView recyclerView;
     URL url;
+    Callback cb;
+    SearchCallback scb;
+    int currentRun;
+
 
     public RssFeedReader(Context context, RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
         this.context = context;
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Loading...");
+        currentRun = 3;
+    }
+
+    public RssFeedReader(SearchCallback scb, Context context) {
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Loading...");
+        this.scb = scb;
+        currentRun = 2;
+    }
+
+
+    public RssFeedReader(Callback cb, Context context) {
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Loading...");
+        this.cb = cb;
+        currentRun = 1;
     }
 
     //Displaying progress dialog, before fetching rss feed
@@ -63,10 +83,24 @@ public class RssFeedReader extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         progressDialog.dismiss();
-        FeedsAdapter adapter = new FeedsAdapter(context, feedItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.addItemDecoration(new VerticalSpace(20));
-        recyclerView.setAdapter(adapter);
+        if(currentRun == 3){
+            FeedsAdapter adapter = new FeedsAdapter(context, feedItems);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            recyclerView.addItemDecoration(new VerticalSpace(20));
+            recyclerView.setAdapter(adapter);
+        }
+        else if(currentRun == 2){
+            System.out.println("scb processing start <------------------------------------------->" );
+            scb.processFeedData(feedItems);
+            System.out.println("scb processing end <------------------------------------------->" );
+
+        }
+        else if (currentRun == 1){
+            cb.processData(feedItems);
+        }
+        else
+            System.out.println("unknown......................................");
+
 
     }
 
@@ -111,6 +145,10 @@ public class RssFeedReader extends AsyncTask<Void, Void, Void> {
                 }
             }
         }
+    }
+
+    public ArrayList<FeedItem> getFeedItems() {
+        return feedItems;
     }
 
     //This method will download rss feed document from specified url

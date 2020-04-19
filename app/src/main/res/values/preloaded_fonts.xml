@@ -2,7 +2,6 @@
 <!--Kone Fanhatcha | Student ID: S1803435-->
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/</item>
         <item>@font/montserrat</item>
         <item>@font/open_sans_light</item>
         <item>@font/open_sans_semibold</item>

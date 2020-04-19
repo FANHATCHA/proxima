@@ -29,37 +29,17 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedModelVie
     private List<FeedItem> mRssFeedModels = new ArrayList<>();
     Context context;
 
-//    private OnRssFeedListener mOnRssFeedListener;
-//
-//    public FeedsAdapter(List<FeedItem> mRssFeedModels, OnRssFeedListener onRssFeedListener) {
-//        this.mRssFeedModels = mRssFeedModels;
-//        this.mOnRssFeedListener = onRssFeedListener;
-//    }
-
-    //    public FeedsAdapter(Context context, List<FeedItem> rssFeedModels, FeedModelViewHolder.OnRssFeedListener onRssFeedListener) {
-//        mRssFeedModels = rssFeedModels;
-//        this.context=context;
-//        this.mOnRssFeedListener = onRssFeedListener;
-//    }
 
     public FeedsAdapter(Context context, List<FeedItem> rssFeedModels){
         mRssFeedModels = rssFeedModels;
         this.context=context;
     }
 
-//    @Override
-//    public FeedModelViewHolder onCreateViewHolder(ViewGroup parent, int type) {
-//        View v = LayoutInflater.from(parent.getContext())
-//                .inflate(R.layout.item_rss_feed, parent, false);
-//        FeedModelViewHolder holder = new FeedModelViewHolder(v, mOnRssFeedListener);
-//        return holder;
-//    }
 
     @NonNull
     @Override
     public FeedModelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int type) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rss_feed, parent, false);
-//        return new FeedModelViewHolder(view, mOnRssFeedListener, parent.getContext());
         return new FeedModelViewHolder(view, parent.getContext());
     }
 
@@ -69,13 +49,6 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedModelVie
         Utils utils = new Utils();
 
         final FeedItem rssFeedModel = mRssFeedModels.get(position);
-//        ((TextView)holder.rssFeedView.findViewById(R.id.magnitudeText)).setText(utils.magnitude(rssFeedModel.getTitle()));
-//        ((TextView)holder.rssFeedView.findViewById(R.id.titleText)).setText(utils.eventTitle(rssFeedModel.getTitle()));
-//       ((TextView)holder.rssFeedView.findViewById(R.id.pubDateText)).setText(utils.eventDate(rssFeedModel.getPubDate()));
-//        ((TextView)holder.rssFeedView.findViewById(R.id.descriptionText)).setText(rssFeedModel.getDescription());
-//        ((TextView)holder.rssFeedView.findViewById(R.id.linkText)).setText(rssFeedModel.getLink());
-        //((TextView)holder.rssFeedView.findViewById(R.id.pubDateText)).setText(rssFeedModel.getLink());
-
         holder.magnitudeText.setText(utils.magnitude(rssFeedModel.getTitle()));
         holder.titleText.setText(utils.eventTitle(rssFeedModel.getTitle()));
         holder.pubDateText.setText(utils.eventDate(rssFeedModel.getPubDate()));
@@ -90,24 +63,18 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedModelVie
         TextView titleText;
         TextView pubDateText;
 
-        //        TextView textTile;
-//        OnRssFeedListener mOnRssFeedListener;
         public FeedModelViewHolder(View v) {
             super(v);
             rssFeedView = v;
 
         }
 
-//        public FeedModelViewHolder(View itemView, OnRssFeedListener onRssFeedListener, Context context) {
         public FeedModelViewHolder(View itemView, Context context) {
             super(itemView);
             this.context = context;
-            //timestamp = itemView.findViewById(R.id.note_timestamp);
-//            textTile = itemView.findViewById(R.id.titleText);
             titleText = itemView.findViewById(R.id.titleText);
             magnitudeText = itemView.findViewById(R.id.magnitudeText);
             pubDateText = itemView.findViewById(R.id.pubDateText);
-//            mOnRssFeedListener = onRssFeedListener;
             itemView.setOnClickListener(this);
         }
 
@@ -116,19 +83,13 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedModelVie
         @Override
         public void onClick(View view) {
             Log.d(TAG, "onClick: " + getAdapterPosition());
-//            mOnRssFeedListener.onRssFeedClicked(getAdapterPosition());
             Intent intent = new Intent(this.context, FeedDetails.class);
-            intent.putExtra("selected_rss_feed", mRssFeedModels.get(getAdapterPosition()));
-
+            intent.putExtra("activity_feed_details", mRssFeedModels.get(getAdapterPosition()));
             context.startActivity(intent);
         }
 
 
     }
-
-//    public interface OnRssFeedListener{
-//        void onRssFeedClicked(int position);
-//    }
 
     @Override
     public int getItemCount() {

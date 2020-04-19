@@ -29,7 +29,7 @@
     <!-- ActionBar title text -->
     <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/actionbar_text</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">25dp</item>
         <item name="android:fontFamily">@font/open_sans_semibold</item>
     </style>
 
@@ -46,5 +46,8 @@
     <style name="CustomActionBarTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="CustomActionBarTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
 
 </resources>

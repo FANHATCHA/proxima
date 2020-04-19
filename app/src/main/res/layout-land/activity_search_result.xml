@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Kone Fanhatcha | Student ID: S1803435-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feed_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    tools:context=".SearchResult">
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Search Result for: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2sp"
+            android:layout_marginBottom="1sp"
+            android:layout_marginTop="2dp"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/date_selected"
+            android:layout_marginBottom="1sp"
+            android:layout_marginTop="18sp"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Nephritis"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Largest magnitude Earthquake"
+            android:layout_marginBottom="15sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/largest_earth_location"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/largest_earth_magnitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_below="@id/largest_earth_location"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Nephritis"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Deepest earthquake."
+            android:layout_marginBottom="15sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp"
+            android:id="@+id/description_title"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/deepest_earthquake_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="18dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/deepest_earthquake_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_below="@id/deepest_earthquake_location"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Nephritis"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Shallowest earthquake."
+            android:layout_marginBottom="15sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="20sp"
+            android:textSize="15sp"
+            android:id="@+id/description_title_2"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/shallowest_earthquake_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="18dp"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/shallowest_earthquake_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_below="@id/shallowest_earthquake_location"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
